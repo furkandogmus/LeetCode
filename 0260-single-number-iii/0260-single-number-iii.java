@@ -6,16 +6,14 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             hm.put(nums[i],hm.getOrDefault(nums[i],0)+1);
         }
-        ArrayList<Integer> ar = new ArrayList<>();
+        int[] res = new int[nums.length];
+        int index = 0;
         for(int num: hm.keySet()){
-            if(hm.get(num)==1){
-                ar.add(num);
+            if(hm.get(num)==1){  
+                res[index++] = num;
             }
         }
-        int[] res = new int[ar.size()];
-        for(int i=0;i<ar.size();i++){
-            res[i] = ar.get(i);
-        }
+        res = Arrays.copyOf(res,index);
         return res;
     }
 }
