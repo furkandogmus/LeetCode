@@ -1,8 +1,5 @@
 class Solution {
     public boolean isValidSudoku(char[][] board) {
-        System.out.println(this.checkRows(board));
-        System.out.println(this.checkCols(board));
-        System.out.println(this.check3x3Squares(board));
         return (this.checkRows(board) && this.checkCols(board) && this.check3x3Squares(board));
     }
     
