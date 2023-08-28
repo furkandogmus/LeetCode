@@ -16,11 +16,7 @@ class Solution {
         ListNode temp = head;
         ListNode temp2 = temp.next;
         ListNode temp3 = temp2.next;
-        if(temp3==null) {
-            temp2.next = head;
-            head.next = null;
-            return temp2;
-        }
+
         
         while(temp2 != null){
             temp2.next = temp;
