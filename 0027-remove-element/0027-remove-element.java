@@ -8,9 +8,6 @@ class Solution {
             }
         }
         Arrays.sort(nums);
-        for(int i=0;i<counter;i++){
-            System.out.print(nums[i] + " ");
-        }
         return counter;
     }
 }
