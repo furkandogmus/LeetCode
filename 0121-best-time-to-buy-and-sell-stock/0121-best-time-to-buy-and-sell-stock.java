@@ -4,14 +4,12 @@ class Solution {
         int max = -1;
         int[] ar = new int[prices.length];
         ar[prices.length-1] = -1;
+        int res = 0;
         for(int i=prices.length-2;i>=0;i--){
             ar[i] = Math.max(max,prices[i+1]);
             max = ar[i];
+            res = Math.max(ar[i]-prices[i],res);
         }
-        max = 0;
-        for(int i=0;i<prices.length;i++){
-            max = Math.max(ar[i]-prices[i],max);
-        }
-        return max;
+        return res;
     }
 }
