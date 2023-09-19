@@ -2,28 +2,27 @@ class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         if(n==0) return;
         if(m==0){
-            for(int i=0;i<n;i++){
-                nums1[i] = nums2[i];
-            }
+            if (n >= 0) System.arraycopy(nums2, 0, nums1, 0, n);
             return;
         }
-        ArrayList<Integer> ar = new ArrayList<>();
-        int i=0,j=0;
-        while(m!=i && j!=n){
+
+        int i = m-1,j=n-1;
+        while(i>=0 || j>=0){
+            if(j<0){
+                nums1[i] = nums1[i--];
+                continue;
+            }
+           if(i<0){
+                nums1[j] = nums2[j--];
+                continue;
+            }
             if(nums1[i]>=nums2[j]){
-                ar.add(nums2[j++]);
-            }else{ar.add(nums1[i++]);}
+                nums1[i+j+1] = nums1[i--];
+            }else{
+                nums1[i+j+1] = nums2[j--];
+            }
         }
-        while(m!=i){
-            ar.add(nums1[i++]);
-        }
-        while(n!=j){
-            ar.add(nums2[j++]);
-        }
-    
-        for(i=0;i<ar.size();i++){
-            nums1[i] = ar.get(i);
-        }
+
 
     }
 }
