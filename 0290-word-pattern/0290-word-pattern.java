@@ -4,6 +4,7 @@ class Solution {
         Map<String,Character> hm1 = new HashMap<>();
 		String[] sArr = s.split(" ");
 		if(sArr.length!=pattern.length()) return false;
+        
         for(int i=0;i<sArr.length;i++) {
 			if(hm.containsKey(pattern.charAt(i))) {
 				if(!sArr[i].equals(hm.get(pattern.charAt(i)))) {
@@ -13,9 +14,7 @@ class Solution {
                 hm.put(pattern.charAt(i), sArr[i]);
             
             }
-		}
-        for(int i=0;i<sArr.length;i++) {
-			if(hm1.containsKey(sArr[i])) {
+            if(hm1.containsKey(sArr[i])) {
 				if(pattern.charAt(i)!=hm1.get(sArr[i])) {
 					return false;
 				}
@@ -23,6 +22,7 @@ class Solution {
                 hm1.put(sArr[i], pattern.charAt(i));
             }
 		}
+
 		return true;
     }
 }
