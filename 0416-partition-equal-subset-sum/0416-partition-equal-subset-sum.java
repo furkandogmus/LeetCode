@@ -14,10 +14,10 @@ class Solution {
             prev[i] = false;
         }
     
- 
+         
       
         for (int i = 1; i <= n; i++) {
-        boolean[] curr = new boolean[sum + 1];
+              boolean[] curr = new boolean[sum + 1];
             for (int j = 1; j <= sum; j++) {
                 if(j==nums[i-1]) curr[j] = true;
                 if (j < nums[i - 1])
