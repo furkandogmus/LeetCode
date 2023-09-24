@@ -20,9 +20,7 @@ class Solution {
                 dp[i][j] = dp[i-1][j] +dp[i][j-1];
             }
         }
-        for(int i=0;i<m;i++){
-            System.out.println(Arrays.toString(dp[i]));
-        }
+     
         return dp[m-1][n-1];
     }
 }
