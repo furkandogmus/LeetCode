@@ -12,10 +12,12 @@ class Solution {
         for(int i=0;i<str2.length();i++){
             res.append(str2.charAt(i));
             StringBuilder control = new StringBuilder(res.toString());
+            if(str1.length()%control.length()!=0) continue;
             while(control.length()<str1.length()){
                 control.append(res.toString());
             }
             StringBuilder control2 = new StringBuilder(res.toString());
+            if(str2.length()%control2.length()!=0) continue;
             while(control2.length()<str2.length()){
                 control2.append(res.toString());
             }
