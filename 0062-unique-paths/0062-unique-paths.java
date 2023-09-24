@@ -8,12 +8,13 @@ class Solution {
         if(k==1 || k+1==n) return n;
         int r = Math.min(n-k,k);
         double result = 1.0;
-        int i = 1;
-        while(i<=r){
+        int x=n;
+        while(r>0){
             result = result * n;
-            result/=i;
+            result/=(Math.min(x-k,k) -r+1);
+            
             n--;
-            i++;
+            r--;
             
         }
         
