@@ -28,10 +28,8 @@ class Solution {
             node.left = new TreeNode(val);
             return;
         }
-        if(node.val<val){
-            insert(node.right,val);
-        }else{
-            insert(node.left,val);
-        }
+        if(node.val<val) insert(node.right,val);
+        else insert(node.left,val);
+        
     }
 }
